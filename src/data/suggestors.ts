@@ -9,6 +9,10 @@ const CommonSuggestors = Object.freeze({
     name: "Dark",
     discordId: 1235346205924659312n,
   },
+  Jayden: {
+    name: "Jayden_G420",
+    discordId: 271775950365130753n,
+  },
 } satisfies z.input<typeof suggestorObjectSchema>);
 
 export const suggestorSchema = z.object({

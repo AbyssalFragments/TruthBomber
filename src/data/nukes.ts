@@ -32,9 +32,41 @@ const TheMegaObject = {
     {
       suggestor: suggestors.Lillith,
     },
+  "https://tenor.com/view/zombies-true-truth-truth-nuke-richtofen-gif-9600806367048332710":
+    {
+      suggestor: suggestors.Lillith,
+      tags: "false",
+    },
+  "https://tenor.com/view/walter-white-false-nuke-walter-white-false-breaking-bad-false-breaking-bad-false-nuke-gif-11851145952566757188":
+    {
+      suggestor: suggestors.Lillith,
+      tags: "false",
+    },
+  "https://tenor.com/view/truth-nuke-truth-supernova-false-nuke-false-supernova-false-gif-5457766589162937417":
+    {
+      suggestor: suggestors.Lillith,
+      tags: "false",
+    },
+  "https://tenor.com/view/toy-freddy-truth-nuke-true-fnaf-2-movie-car-crash-gif-10605118628274388500":
+    {
+      tags: "truth",
+      suggestor: suggestors.Lillith,
+    },
+  "https://tenor.com/view/iron-lung-markiplier-true-morgan-freeman-true-morgan-freeman-gif-17440395262741494665":
+    {
+      tags: "truth",
+      suggestor: suggestors.Jayden,
+    },
+  "https://tenor.com/view/true-truth-false-wrong-stan-twitter-gif-18145397122687222458":
+    {
+      tags: "truth",
+      suggestor: suggestors.Lillith,
+      caption:
+        "🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨",
+    },
 } as z.input<typeof schema>;
 
-export const CommonTags = ["truth"] as const;
+export const CommonTags = ["truth", "false"] as const;
 
 const tagSchema = z.enum(CommonTags).or(z.string<string & {}>());
 export type NukeTag = z.infer<typeof tagSchema>;
