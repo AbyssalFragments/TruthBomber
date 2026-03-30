@@ -10,4 +10,4 @@
 
 Send Random Truth nukes!
 
-Create issues on our [Github](https://github.com/AbyssalFragments/TruthBomber/issues/new) to suggest a gif!
+Create issues on our [Github](https://github.com/AbyssalFragments/TruthBomber/issues) to suggest a gif!
