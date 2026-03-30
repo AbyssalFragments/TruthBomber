@@ -9,25 +9,45 @@ import {
 } from "discord.js";
 import { bot, rest } from "./bot";
 import { env } from "bun";
-import truthNukes from "./data/nukes.ts";
+import nukes, { CommonTags } from "./data/nukes.ts";
 import { randomFromArray } from "./utils";
 
 const commands: {
   builder: SlashCommandBuilder;
   exec: (interaction: ChatInputCommandInteraction) => void;
 }[] = [
-  {
+  ...CommonTags.map((tag) => ({
     builder: new SlashCommandBuilder()
-      .setName("truth")
-      .setDescription("Fire a truth nuke")
+      .setName(tag)
+      .setDescription(`Send a ${tag} gif`)
       // friendly fire - use anywhere lmao
       .setContexts(
         InteractionContextType.BotDM,
         InteractionContextType.Guild,
         InteractionContextType.PrivateChannel,
       ),
-    async exec(interaction) {
-      const nuke = randomFromArray(Object.values(truthNukes));
+    async exec(interaction: ChatInputCommandInteraction) {
+      const nuke = randomFromArray(
+        nukes.filter((i) => i.meta.tags.includes(tag)),
+      );
+      const lines: string[] = [];
+      if (nuke.meta.caption) lines.push(nuke.meta.caption);
+      lines.push(nuke.link);
+      await interaction.reply({ content: lines.join("\n") });
+    },
+  })),
+  {
+    builder: new SlashCommandBuilder()
+      .setName("random")
+      .setDescription(`Send a random gif`)
+      // friendly fire - use anywhere lmao
+      .setContexts(
+        InteractionContextType.BotDM,
+        InteractionContextType.Guild,
+        InteractionContextType.PrivateChannel,
+      ),
+    async exec(interaction: ChatInputCommandInteraction) {
+      const nuke = randomFromArray(nukes);
       const lines: string[] = [];
       if (nuke.meta.caption) lines.push(nuke.meta.caption);
       lines.push(nuke.link);

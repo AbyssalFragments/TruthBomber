@@ -18,4 +18,8 @@ export const suggestorSchema = z.object({
 
 const suggestorObjectSchema = z.record(z.string(), suggestorSchema);
 
-export default suggestorObjectSchema.parse(CommonSuggestors);
+type Suggestors = {
+  [K in keyof typeof CommonSuggestors]: z.output<typeof suggestorSchema>;
+};
+
+export default suggestorObjectSchema.parse(CommonSuggestors) as Suggestors;
