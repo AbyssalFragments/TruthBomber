@@ -1,15 +1,15 @@
----
 name: Suggest a GIF
-about: Suggest a new GIF for the bot
+description: Suggest a new GIF for the bot
 title: "[GIF Suggestion] "
 labels: ["gif suggestion"]
-assignees: ''
+assignees: ["LillithRosePup"]
 
 body:
   - type: markdown
     attributes:
       value: |
         Thanks for taking the time to suggest a GIF!
+
   - type: input
     id: gif_url
     attributes:
@@ -18,6 +18,7 @@ body:
       placeholder: https://tenor.com/view/...
     validations:
       required: true
+
   - type: input
     id: tags
     attributes:
@@ -26,6 +27,7 @@ body:
       placeholder: truth, false, clap
     validations:
       required: true
+
   - type: textarea
     id: caption
     attributes:
@@ -34,6 +36,7 @@ body:
       placeholder: Your caption here...
     validations:
       required: false
+
   - type: input
     id: name
     attributes:
@@ -42,6 +45,7 @@ body:
       placeholder: Your name
     validations:
       required: true
+
   - type: input
     id: discord_id
     attributes:
@@ -50,4 +54,3 @@ body:
       placeholder: Your Discord ID
     validations:
       required: false
----
