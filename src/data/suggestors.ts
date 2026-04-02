@@ -13,6 +13,10 @@ const CommonSuggestors = Object.freeze({
     name: "Jayden_G420",
     discordId: 271775950365130753n,
   },
+  Ruminis: {
+    name: "Ruminis",
+    discordId: 197289380761567233n,
+  },
 } satisfies z.input<typeof suggestorObjectSchema>);
 
 export const suggestorSchema = z.object({

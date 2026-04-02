@@ -64,6 +64,11 @@ const TheMegaObject = {
       caption:
         "🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨",
     },
+  "https://tenor.com/view/truth-nuke-truth-nuke-trvth-nvke-big-boss-gif-15944112429945701902":
+    {
+      tags: "truth",
+      suggestor: suggestors.Ruminis,
+    },
 } as z.input<typeof schema>;
 
 export const CommonTags = ["truth", "false"] as const;
