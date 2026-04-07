@@ -69,6 +69,10 @@ const TheMegaObject = {
       tags: "truth",
       suggestor: suggestors.Ruminis,
     },
+  "https://gif.fxtwitter.com/tweet_video/HFQ3GBGWsAAAt7X.gif": {
+    tags: "truth",
+    suggestor: suggestors.Jayden,
+  },
 } as z.input<typeof schema>;
 
 export const CommonTags = ["truth", "false"] as const;
