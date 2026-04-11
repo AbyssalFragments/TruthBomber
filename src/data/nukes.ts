@@ -30,6 +30,7 @@ const TheMegaObject = {
     },
   "https://tenor.com/view/gem-alarm-gem-gemson-gapejak-wholesome-soyjak-gif-27193685":
     {
+      tags: "gem",
       suggestor: suggestors.Lillith,
     },
   "https://tenor.com/view/zombies-true-truth-truth-nuke-richtofen-gif-9600806367048332710":
@@ -73,9 +74,13 @@ const TheMegaObject = {
     tags: "truth",
     suggestor: suggestors.Jayden,
   },
+  "https://files.catbox.moe/0571k8.mp4": {
+    tags: "gem",
+    suggestor: suggestors.Lillith,
+  },
 } as z.input<typeof schema>;
 
-export const CommonTags = ["truth", "false"] as const;
+export const CommonTags = ["truth", "false", "gem"] as const;
 
 const tagSchema = z.enum(CommonTags).or(z.string<string & {}>());
 export type NukeTag = z.infer<typeof tagSchema>;
