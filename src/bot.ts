@@ -1,3 +1,8 @@
+/*
+ * Copyright (c) 2026 Abyssal Fragments
+ * SPDX-License-Identifier: MIT
+ */
+
 import { env } from "bun";
 import { Client, REST } from "discord.js";
 

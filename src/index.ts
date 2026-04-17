@@ -1,3 +1,8 @@
+/*
+ * Copyright (c) 2026 Abyssal Fragments
+ * SPDX-License-Identifier: MIT
+ */
+
 import { Events } from "discord.js";
 import { bot } from "./bot";
 import { registerInteraction } from "./commands";

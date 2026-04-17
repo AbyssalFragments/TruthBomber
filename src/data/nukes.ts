@@ -1,3 +1,8 @@
+/*
+ * Copyright (c) 2026 Abyssal Fragments
+ * SPDX-License-Identifier: MIT
+ */
+
 import z from "zod";
 import suggestors, { suggestorSchema } from "./suggestors";
 
