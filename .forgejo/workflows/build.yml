@@ -2,9 +2,6 @@
 name: Build Docker Image
 
 on:
-  push:
-    branches:
-      - main
   workflow_dispatch:
 
 permissions:
@@ -38,9 +35,3 @@ jobs:
           file: Dockerfile
           platforms: linux/amd64
           tags: git.abyssalfragments.org/services/truthbomber:latest
-      - name: Deploy
-        if: contains(env.PORTAINER_WEBHOOK_URL, 'http')
-        run: |
-          curl -X POST -H "Content-Type: application/json" -d '{"text": "Truth Bomber in route, sir"}' ${PORTAINER_WEBHOOK_URL}
-        env:
-          PORTAINER_WEBHOOK_URL: ${{ secrets.PORTAINER_WEBHOOK_URL }}
