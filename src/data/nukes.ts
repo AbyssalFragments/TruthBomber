@@ -83,6 +83,19 @@ const TheMegaObject = {
     tags: "gem",
     suggestor: suggestors.Lillith,
   },
+  "https://tenor.com/view/get-me-a-true-bartender-bel-bo-the-town-with-no-name-get-me-a-drink-bartender-true-meme-gif-3498271953449673056":
+    {
+      tags: "truth",
+      suggestor: suggestors.Ruminis,
+    },
+  "https://files.catbox.moe/ly9rqq.gif": {
+    tags: "truth",
+    suggestor: suggestors.Jayden,
+  },
+  "https://gif.fxtwitter.com/tweet_video/HFwJAfNWkAAaG_i.webp": {
+    tags: "truth",
+    suggestor: suggestors.Jayden,
+  },
 } as z.input<typeof schema>;
 
 export const CommonTags = ["truth", "false", "gem"] as const;
