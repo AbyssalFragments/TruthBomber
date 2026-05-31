@@ -96,6 +96,11 @@ const TheMegaObject = {
     tags: "truth",
     suggestor: suggestors.Jayden,
   },
+  "https://tenor.com/view/sable-animal-crossing-true-morgan-freeman-truth-nuke-gif-14592641501130146737":
+    {
+      tags: "truth",
+      suggestor: suggestors.Lillith,
+    },
 } as z.input<typeof schema>;
 
 export const CommonTags = ["truth", "false", "gem"] as const;
