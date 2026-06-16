@@ -4,13 +4,13 @@
  */
 
 import { env } from "bun";
-import { Client, GatewayIntentBits, REST } from "discord.js";
+import { Client, REST } from "discord.js";
 
 export const bot = new Client({
   intents: [
-    GatewayIntentBits.MessageContent,
-    GatewayIntentBits.GuildMessages,
-    GatewayIntentBits.Guilds,
+    // GatewayIntentBits.MessageContent,
+    // GatewayIntentBits.GuildMessages,
+    // GatewayIntentBits.Guilds,
   ],
 });
 
