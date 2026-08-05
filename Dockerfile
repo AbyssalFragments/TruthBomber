@@ -1,5 +1,7 @@
 FROM oven/bun as builder
 
+LABEL org.opencontainers.image.source=https://git.abyssalfragments.org/services/truthbomber
+
 WORKDIR /build
 
 COPY package.json bun.lock /build/

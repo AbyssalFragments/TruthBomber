@@ -1,7 +1,7 @@
-# adapted from internal mgmt bot
 name: Build Docker Image
 
 on:
+  push:
   workflow_dispatch:
 
 permissions:
