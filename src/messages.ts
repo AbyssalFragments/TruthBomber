@@ -10,13 +10,8 @@ import { randomFromArray } from "./utils";
 
 export function registerMessageHandler() {
   bot.on(Events.MessageCreate, async (msg) => {
-    if (
-      msg.channel.isSendable() &&
-      CommonTags.some((tag) => msg.content === tag)
-    ) {
-      const nuke = randomFromArray(
-        nukes.filter((i) => i.meta.tags.includes(msg.content)),
-      );
+    if (msg.channel.isSendable() && CommonTags.some((tag) => msg.content === tag)) {
+      const nuke = randomFromArray(nukes.filter((i) => i.meta.tags.includes(msg.content)));
       const lines: string[] = [];
       if (nuke.meta.caption) lines.push(nuke.meta.caption);
       lines.push(nuke.link);

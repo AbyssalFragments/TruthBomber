@@ -7,16 +7,14 @@ import z from "zod";
 import suggestors, { suggestorSchema } from "./suggestors";
 
 const TheMegaObject = {
-  "https://tenor.com/view/true-truth-nuke-super-truth-nova-truth-meme-gif-16889273424352737553":
-    {
-      tags: "truth",
-      suggestor: suggestors.Lillith,
-    },
-  "https://tenor.com/view/oguri-cap-true-eating-eat-uma-musume-gif-6958309401336282549":
-    {
-      tags: "truth",
-      suggestor: suggestors.Lillith,
-    },
+  "https://tenor.com/view/true-truth-nuke-super-truth-nova-truth-meme-gif-16889273424352737553": {
+    tags: "truth",
+    suggestor: suggestors.Lillith,
+  },
+  "https://tenor.com/view/oguri-cap-true-eating-eat-uma-musume-gif-6958309401336282549": {
+    tags: "truth",
+    suggestor: suggestors.Lillith,
+  },
   "https://tenor.com/view/morgan-freeman-true-morgan-freeman-true-nodding-gif-13973817878387504960":
     {
       tags: "truth",
@@ -28,21 +26,18 @@ const TheMegaObject = {
       caption: "This is not false...",
       suggestor: suggestors.Dark,
     },
-  "https://tenor.com/view/true-nuke-ash-baby-squidward-spongebob-gif-10318197618755767412":
-    {
-      tags: "truth",
-      suggestor: suggestors.Dark,
-    },
-  "https://tenor.com/view/gem-alarm-gem-gemson-gapejak-wholesome-soyjak-gif-27193685":
-    {
-      tags: "gem",
-      suggestor: suggestors.Lillith,
-    },
-  "https://tenor.com/view/zombies-true-truth-truth-nuke-richtofen-gif-9600806367048332710":
-    {
-      suggestor: suggestors.Lillith,
-      tags: "false",
-    },
+  "https://tenor.com/view/true-nuke-ash-baby-squidward-spongebob-gif-10318197618755767412": {
+    tags: "truth",
+    suggestor: suggestors.Dark,
+  },
+  "https://tenor.com/view/gem-alarm-gem-gemson-gapejak-wholesome-soyjak-gif-27193685": {
+    tags: "gem",
+    suggestor: suggestors.Lillith,
+  },
+  "https://tenor.com/view/zombies-true-truth-truth-nuke-richtofen-gif-9600806367048332710": {
+    suggestor: suggestors.Lillith,
+    tags: "false",
+  },
   "https://tenor.com/view/walter-white-false-nuke-walter-white-false-breaking-bad-false-breaking-bad-false-nuke-gif-11851145952566757188":
     {
       suggestor: suggestors.Lillith,
@@ -63,18 +58,15 @@ const TheMegaObject = {
       tags: "truth",
       suggestor: suggestors.Jayden,
     },
-  "https://tenor.com/view/true-truth-false-wrong-stan-twitter-gif-18145397122687222458":
-    {
-      tags: "truth",
-      suggestor: suggestors.Lillith,
-      caption:
-        "🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨",
-    },
-  "https://tenor.com/view/truth-nuke-truth-nuke-trvth-nvke-big-boss-gif-15944112429945701902":
-    {
-      tags: "truth",
-      suggestor: suggestors.Ruminis,
-    },
+  "https://tenor.com/view/true-truth-false-wrong-stan-twitter-gif-18145397122687222458": {
+    tags: "truth",
+    suggestor: suggestors.Lillith,
+    caption: "🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨🪨",
+  },
+  "https://tenor.com/view/truth-nuke-truth-nuke-trvth-nvke-big-boss-gif-15944112429945701902": {
+    tags: "truth",
+    suggestor: suggestors.Ruminis,
+  },
   "https://gif.fxtwitter.com/tweet_video/HFQ3GBGWsAAAt7X.gif": {
     tags: "truth",
     suggestor: suggestors.Jayden,
@@ -117,13 +109,11 @@ const metadataSchema = z.object({
   suggestor: suggestorSchema,
 });
 
-const schema = z
-  .record(z.string().describe("The Link"), metadataSchema)
-  .transform((obj) =>
-    Object.entries(obj).map(([link, meta]) => ({
-      link,
-      meta,
-    })),
-  );
+const schema = z.record(z.string().describe("The Link"), metadataSchema).transform((obj) =>
+  Object.entries(obj).map(([link, meta]) => ({
+    link,
+    meta,
+  })),
+);
 
 export default schema.parse(TheMegaObject);

@@ -31,9 +31,7 @@ const commands: {
         InteractionContextType.PrivateChannel,
       ),
     async exec(interaction: ChatInputCommandInteraction) {
-      const nuke = randomFromArray(
-        nukes.filter((i) => i.meta.tags.includes(tag)),
-      );
+      const nuke = randomFromArray(nukes.filter((i) => i.meta.tags.includes(tag)));
       const lines: string[] = [];
       if (nuke.meta.caption) lines.push(nuke.meta.caption);
       lines.push(nuke.link);
@@ -68,9 +66,7 @@ export async function registerInteraction() {
 
   bot.on(Events.InteractionCreate, async (interaction) => {
     if (!interaction.isChatInputCommand()) return; // not needed
-    const command = commands.find(
-      (cmd) => cmd.builder.name === interaction.commandName,
-    );
+    const command = commands.find((cmd) => cmd.builder.name === interaction.commandName);
     if (!command)
       return await interaction.reply({
         content: "Could not find that command!",
